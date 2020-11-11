@@ -13,12 +13,45 @@ function matrixProduct(mat1, mat2) {
     return result;
 }
 
-let mat1 = [[1,2],[3,4]]
-let mat2 = [[5,6],[7,8]]
-
-
-let Result = matrixProduct(mat1, mat2)
 
 
 
-console.table(Result) ;
+function sumOfMatrices(mat1, mat2) {
+    let result = [];
+    result = new Array (mat1.length);
+    for( let i = 0; i < result.length; i++){
+        result [i] = new Array (mat1[i].length);
+        for ( let j = 0; j < result[i].length;j++){
+            result[i][j] = mat1[i][j] + mat2[i][j];
+        }
+    }
+    return result;
+    
+    }
+    
+
+    //finding the sum of each row in a matrice
+    
+    function sumOfEachRow(mat1) {
+       let array = [];
+        for ( let row = 0; row < mat1.length; ++row) {
+          array[row] = SumOfArray(mat1[row]);
+        }
+        return array;
+    }
+   
+    function SumOfArray (array) {
+        let sum = 0;
+        for (let i = 0; i < array.length; ++i){
+            sum += array[i];
+        }
+        return sum;
+    }
+
+    module.exports = {
+        matrixProduct, sumOfMatrices, sumOfEachRow
+    };
+
+
+
+    
